@@ -36,7 +36,7 @@ Edit
 ### 1️⃣ Clone the Repository
 
 git clone https://github.com/zeeshanbhutto/n8n-email-automation.git
-cd n8n-tedx-email-automation
+cd n8n-email-automation
 2️⃣ Install n8n
 bash
 Copy
