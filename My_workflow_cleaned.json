@@ -1,0 +1,197 @@
+{
+  "name": "REDACTED_PLACEHOLDER",
+  "nodes": [
+    {
+      "parameters": {
+        "options": {
+          "systemMessage": "You are a helpful assistant"
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.agent",
+      "typeVersion": 2.1,
+      "position": [
+        -16,
+        -16
+      ],
+      "id": "REDACTED_PLACEHOLDER",
+      "name": "REDACTED_PLACEHOLDER"
+    },
+    {
+      "parameters": {
+        "options": {
+          "temperature": 0.7
+        }
+      },
+      "type": "@n8n/n8n-nodes-langchain.lmChatGroq",
+      "typeVersion": 1,
+      "position": [
+        160,
+        192
+      ],
+      "id": "REDACTED_PLACEHOLDER",
+      "name": "REDACTED_PLACEHOLDER",
+      "credentials": {
+        "groqApi": {
+          "id": "REDACTED_PLACEHOLDER",
+          "name": "REDACTED_PLACEHOLDER"
+        }
+      }
+    },
+    {
+      "parameters": {},
+      "type": "@n8n/n8n-nodes-langchain.memoryBufferWindow",
+      "typeVersion": 1.3,
+      "position": [
+        320,
+        192
+      ],
+      "id": "REDACTED_PLACEHOLDER",
+      "name": "REDACTED_PLACEHOLDER"
+    },
+    {
+      "parameters": {
+        "documentId": {
+          "__rl": true,
+          "value": "1JlipXKwyLwoXgy5oOTjEbc6RzTuU-ZSLADTacSNKwG4",
+          "mode": "list",
+          "cachedResultName": "REDACTED_PLACEHOLDER",
+          "cachedResultUrl": "REDACTED_PLACEHOLDER"
+        },
+        "sheetName": {
+          "__rl": true,
+          "value": "gid=0",
+          "mode": "list",
+          "cachedResultName": "REDACTED_PLACEHOLDER",
+          "cachedResultUrl": "REDACTED_PLACEHOLDER"
+        },
+        "options": {}
+      },
+      "type": "n8n-nodes-base.googleSheets",
+      "typeVersion": 4.6,
+      "position": [
+        416,
+        -64
+      ],
+      "id": "REDACTED_PLACEHOLDER",
+      "name": "REDACTED_PLACEHOLDER",
+      "credentials": {
+        "googleSheetsOAuth2Api": {
+          "id": "REDACTED_PLACEHOLDER",
+          "name": "REDACTED_PLACEHOLDER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "sendTo": "={{ $json['EMAIL '] }}",
+        "subject": "i am writing this email to invite you for tedxclifton event",
+        "emailType": "text",
+        "message": "I hope this email finds you well.  On behalf of the TEDxClifton Karachi 2025 organizing committee, I\u2019m pleased to invite you to attend TEDxClifton Karachi 2025 as an esteemed guest. The event will take place on August 24, 2025, at Pearl Continental Hotel, Karachi, under the theme \u201cThe Other Side.\u201d  TEDxClifton is a platform dedicated to celebrating transformative ideas, unconventional perspectives, and changemakers who are shaping a better tomorrow. This year\u2019s theme focuses on untold stories, bold decisions, and unique journeys that inspire innovation, inclusion, and impact.  Your presence would be a tremendous honor for us, and it would offer an excellent opportunity to connect with a dynamic gathering of thought leaders, entrepreneurs, creatives, and future trailblazers from across the country.  Please find the official invitation letter attached for your kind review. We look forward to welcoming you to an inspiring and memorable experience at TEDxClifton 2025.  Warm regards, Zeeshan Bhutto",
+        "options": {}
+      },
+      "type": "n8n-nodes-base.gmail",
+      "typeVersion": 2.1,
+      "position": [
+        656,
+        -64
+      ],
+      "id": "REDACTED_PLACEHOLDER",
+      "name": "REDACTED_PLACEHOLDER",
+      "webhookId": "REDACTED_PLACEHOLDER",
+      "credentials": {
+        "gmailOAuth2": {
+          "id": "REDACTED_PLACEHOLDER",
+          "name": "REDACTED_PLACEHOLDER"
+        }
+      }
+    },
+    {
+      "parameters": {
+        "options": {}
+      },
+      "type": "@n8n/n8n-nodes-langchain.chatTrigger",
+      "typeVersion": 1.1,
+      "position": [
+        -256,
+        64
+      ],
+      "id": "REDACTED_PLACEHOLDER",
+      "name": "REDACTED_PLACEHOLDER",
+      "webhookId": "REDACTED_PLACEHOLDER"
+    }
+  ],
+  "pinData": {},
+  "connections": {
+    "Groq Chat Model": {
+      "ai_languageModel": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_languageModel",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "AI Agent": {
+      "main": [
+        [
+          {
+            "node": "Get row(s) in sheet",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Simple Memory": {
+      "ai_memory": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "ai_memory",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Get row(s) in sheet": {
+      "main": [
+        [
+          {
+            "node": "Send a message",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    },
+    "Send a message": {
+      "main": [
+        []
+      ]
+    },
+    "When chat message received": {
+      "main": [
+        [
+          {
+            "node": "AI Agent",
+            "type": "main",
+            "index": 0
+          }
+        ]
+      ]
+    }
+  },
+  "active": false,
+  "settings": {
+    "executionOrder": "v1"
+  },
+  "versionId": "REDACTED_PLACEHOLDER",
+  "meta": {
+    "templateCredsSetupCompleted": true,
+    "instanceId": "REDACTED_PLACEHOLDER"
+  },
+  "id": "REDACTED_PLACEHOLDER",
+  "tags": []
+}

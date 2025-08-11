@@ -1,0 +1,23 @@
+# Local environment variables
+.env
+
+# Node modules
+node_modules/
+
+# n8n credentials and databases
+*.credentials.json
+.credentials/
+*.sqlite
+*.db
+*.db-journal
+
+# Logs
+*.log
+logs/
+
+# VSCode settings
+.vscode/
+
+# OS-specific files
+.DS_Store
+Thumbs.db
